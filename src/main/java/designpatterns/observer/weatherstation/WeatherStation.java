@@ -6,6 +6,7 @@ import java.util.List;
 public class WeatherStation implements Subject {
 
     private List<Observer> observers = new ArrayList<>();
+    private List<Observer> detached = new ArrayList<>();
 
     private float temperature;
     private float humidity;
@@ -19,15 +20,13 @@ public class WeatherStation implements Subject {
     @Override
     public void detach(Observer observer) {
         // observers.remove(observer);
-        // TODO: fix removing observer in for-each
-        int index = observers.indexOf(observer);
-        if (index >= 0) {
-            observers.remove(index);
-        }
+        detached.add(observer);
     }
 
     @Override
     public void notifyStateChange() {
+        clearDetached();
+
         for (Observer observer : observers) {
             observer.update(temperature, humidity, pressure);
         }
@@ -39,5 +38,14 @@ public class WeatherStation implements Subject {
         this.pressure = pressure;
 
         notifyStateChange();
+    }
+
+    private void clearDetached() {
+        if (!detached.isEmpty()) {
+            for (Observer o : detached) {
+                observers.remove(o);
+            }
+            detached.clear();
+        }
     }
 }

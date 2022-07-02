@@ -55,5 +55,6 @@ public class WeatherStatistics implements Observer, PrintableItem{
         System.out.printf("Max temperature: %7.2f C\n ", maxTemperature);
         System.out.printf("Min temperature: %7.2f C\n", minTemperature);
         System.out.printf("Avg temperature: %7.2f C\n", avgTemperature);
+        System.out.println();
     }
 }
