@@ -1,0 +1,20 @@
+public class PizzaApp {
+
+    public static void main(String[] args) {
+
+        Pizzeria wloskaPizzeria = new WloskaPizzeria();
+        Pizza wloskaPizzaSerowa = wloskaPizzeria.zamowPizza("serowa");
+        System.out.println("Zamówiono: " + wloskaPizzaSerowa.pobierzNazwa() + "\n");
+
+        Pizzeria amerykanskaPizzeria = new AmerykanskaPizzeria();
+        Pizza amerykanskaPizzaSerowa = amerykanskaPizzeria.zamowPizza("serowa");
+        System.out.println("Zamówiono: " + amerykanskaPizzaSerowa.pobierzNazwa() + "\n");
+    }
+}
+
+zamowPizza:
+1) wywołanie metody fabrykującej
+2) wywołanie metod opisujących etapy jej tworzenia
+3) 3 rodzaje pizz: serowa, margeritta, hawaii
+
+każda pizza ma etapy tworzenia: przygotowanie, pieczenie, krojenie, pakowanie.
