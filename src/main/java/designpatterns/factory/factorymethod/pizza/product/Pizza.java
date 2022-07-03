@@ -1,10 +1,18 @@
 package designpatterns.factory.factorymethod.pizza.product;
 
+import designpatterns.factory.abstractfactory.pizza.Cheese;
+import designpatterns.factory.abstractfactory.pizza.Dough;
+import designpatterns.factory.abstractfactory.pizza.Sauce;
+
 // PRODUKT
 public abstract class Pizza {
 
     private String nazwa;
     private String ciasto;
+
+    private Dough dought;
+    private Sauce sauce;
+    private Cheese cheese;
 
     public Pizza(String nazwa, String ciasto) {
         this.nazwa = nazwa;
@@ -29,5 +37,17 @@ public abstract class Pizza {
 
     public String pobierzNazwa() {
         return nazwa;
+    }
+
+    public void setDought(Dough dought) {
+        this.dought = dought;
+    }
+
+    public void setSauce(Sauce sauce) {
+        this.sauce = sauce;
+    }
+
+    public void setCheese(Cheese cheese) {
+        this.cheese = cheese;
     }
 }

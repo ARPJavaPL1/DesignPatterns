@@ -1,5 +1,6 @@
 package designpatterns.factory.factorymethod.pizza;
 
+import designpatterns.factory.abstractfactory.pizza.PizzaComponentFactoryUSA;
 import designpatterns.factory.factorymethod.pizza.factory.amerykanska.AmerykanskaPizzeria;
 import designpatterns.factory.factorymethod.pizza.factory.Pizzeria;
 import designpatterns.factory.factorymethod.pizza.factory.wloska.WloskaPizzeria;
@@ -12,7 +13,7 @@ public class PizzaApp {
         Pizza wloskaPizzaSerowa = wloskaPizzeria.zamowPizza("serowa");
         System.out.println("Zamówiono: " + wloskaPizzaSerowa.pobierzNazwa() + "\n");
 
-        Pizzeria amerykanskaPizzeria = new AmerykanskaPizzeria();
+        Pizzeria amerykanskaPizzeria = new AmerykanskaPizzeria(new PizzaComponentFactoryUSA());
         Pizza amerykanskaPizzaSerowa = amerykanskaPizzeria.zamowPizza("serowa");
         System.out.println("Zamówiono: " + amerykanskaPizzaSerowa.pobierzNazwa() + "\n");
     }

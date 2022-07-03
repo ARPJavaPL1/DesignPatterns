@@ -1,0 +1,20 @@
+Fabryka Abstrakcyjna - Fabryka składników pizzy
+Fabryki rzeczywiste -
+-- Fabryka włoskich składników
+-- Fabryka amerykańskich składników
+
+Produkty
+-- Ciasto
+-- Sos
+-- Ser
+
+Rzeczywiste produkty
+-- włoskie
+---- Ciasto włoskie, Sos włoski, Ser włoski
+-- amerykański
+---- Ciasto amerykańskie, Sos amerykański, Ser amerykański
+
+FabrykaSkladnikow fabryka = new FabrykaSkladnikowWloska();
+fabryka.utworzCiasto(); --> Ciasto włoskie
+fabryka.utworzSos(); --> Sos włoski
+fabryka.utworzSer(); --> Ser włoski
