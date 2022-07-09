@@ -1,5 +1,7 @@
 package refactoring.extractmethod;
 
+import java.util.Date;
+
 public class Code {
 
     private class User {
@@ -29,6 +31,15 @@ public class Code {
         System.out.println(user.getFirstName() + " " + user.getLastName());
         System.out.println("Saldo");
         System.out.println(user.getSaldo());
+
+        Date date = new Date();
+        if (isSummer(date)) {
+            // do smth
+        }
+    }
+
+    private boolean isSummer(Date date) {
+        return date.before(new Date()) || date.after(new Date());
     }
 
 }
